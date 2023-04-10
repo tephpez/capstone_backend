@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Find.belongsTo(models.User, { foreignKey: 'userId' })
+      Find.belongsTo(models.Park, { foreignKey: 'parkId' })
     }
   }
   Find.init({
@@ -30,9 +31,20 @@ module.exports = (sequelize, DataTypes) => {
     abundanceRating: DataTypes.INTEGER,
     locationDesc: DataTypes.STRING,
     landmarks: DataTypes.STRING,
-    userId: DataTypes.INTEGER,
-    locationId: DataTypes.INTEGER
-  }, {
+    userId:{
+      type: DataTypes.INTEGER,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'users',
+        key: 'id'
+      }
+    },
+    locationId:{
+      type: DataTypes.INTEGER,
+      onDelete: "CASCADE"
+    }
+  }, 
+  {
     sequelize,
     modelName: 'Find',
     tableName: 'finds'
