@@ -1,0 +1,25 @@
+{
+  "name": "knowild-db",
+  "version": "1.0.0",
+  "description": "hello world",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tephpez/capstone_backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tephpez/capstone_backend/issues"
+  },
+  "homepage": "https://github.com/tephpez/capstone_backend#readme",
+  "dependencies": {
+    "mysql2": "^3.2.0",
+    "pg": "^8.10.0",
+    "sequelize": "^6.31.0"
+  }
+}
