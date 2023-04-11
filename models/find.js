@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     uses: DataTypes.STRING,
     category: DataTypes.STRING,
     poisonWarning: DataTypes.STRING,
-    dateFound: DataTypes.DATE,
+    dateFound: DataTypes.DATEONLY,
     notes: DataTypes.STRING,
     picOne: DataTypes.STRING,
     picTwo: DataTypes.STRING,
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     abundanceRating: DataTypes.INTEGER,
     locationDesc: DataTypes.STRING,
     landmarks: DataTypes.STRING,
-    userId:{
+    userId: {
       type: DataTypes.INTEGER,
       onDelete: 'CASCADE',
       references: {
@@ -39,12 +39,15 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
-    locationId:{
+    parkId: {
       type: DataTypes.INTEGER,
-      onDelete: "CASCADE"
+      onDelete: 'CASCADE',
+      references: {
+        model: 'parks',
+        key: 'id'
+      }
     }
-  }, 
-  {
+  }, {
     sequelize,
     modelName: 'Find',
     tableName: 'finds'

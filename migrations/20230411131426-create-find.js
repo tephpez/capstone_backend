@@ -25,7 +25,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       dateFound: {
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       },
       notes: {
         type: Sequelize.STRING
@@ -58,10 +58,20 @@ module.exports = {
         type: Sequelize.STRING
       },
       userId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'users',
+          key: 'id'
+        }
       },
-      locationId: {
-        type: Sequelize.INTEGER
+      parkId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'parks',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
