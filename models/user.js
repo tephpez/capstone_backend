@@ -18,36 +18,28 @@ module.exports = (sequelize, DataTypes) => {
       })
     }
   }
-  User.init(
-    {
-      name: {
-        type:DataTypes.STRING,
-        allowNull: false
-      },
-      password: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      currentLocation: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      profPic: {
-        type: DataTypes.STRING,
-        allowNull: false
-    }
-    }, {
-      sequelize,
-      modelName: 'User',
-      tableName: 'users'
+  User.init({
+    username: {
+      type:DataTypes.STRING,
+      allowNull: false
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    currentLocation: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    profPic: {
+      type: DataTypes.STRING,
+      allowNull: false
+  }
+  }, {
+    sequelize,
+    modelName: 'User',
+    tableName: 'users'
 
-    });
-  return User;
+  });
+return User;
 };
-
-
-
-
-//  SETUP    //////////////////////////////////////////////////////////////////////////////////////////////
-//  CODE     //////////////////////////////////////////////////////////////////////////////////////////////
-//  SWEEP    

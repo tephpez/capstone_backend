@@ -18,8 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       })
     }
   }
-  Park.init(
-    {
+  Park.init({
     name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -32,14 +31,27 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    state:  {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
+
     address:  {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    state: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    zip: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    website:{
+      type: DataTypes.STRING,
+      allowNull: false
+    },
   }, 
   {
     sequelize,
@@ -49,9 +61,3 @@ module.exports = (sequelize, DataTypes) => {
   });
   return Park;
 };
-
-
-
-//  SETUP    //////////////////////////////////////////////////////////////////////////////////////////////
-//  CODE     //////////////////////////////////////////////////////////////////////////////////////////////
-//  SWEEP    

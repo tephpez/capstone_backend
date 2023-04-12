@@ -29,24 +29,6 @@ app.get('/', (req, res)=> {res.send('SERVER INITIATED')})
 app.use("/api", AppRouter);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 app.get('/users', (req, res)=> {                 // USERS
     res.send('USERS INITIATED')
 }) 

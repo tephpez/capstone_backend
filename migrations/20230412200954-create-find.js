@@ -19,7 +19,7 @@ module.exports = {
         allowNull: true
       },
 
-      uses: {
+      benefits: {
         type: Sequelize.STRING,
         allowNull: true
       },
