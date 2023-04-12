@@ -10,118 +10,76 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       commonName: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
-
       botanicalName: {
-        type: Sequelize.STRING,
-        allowNull: true
+        type: Sequelize.STRING
       },
-
       uses: {
-        type: Sequelize.STRING,
-        allowNull: true
+        type: Sequelize.STRING
       },
-
       category: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING
       },
-
       poisonWarning: {
-        type: Sequelize.STRING,
-        allowNull: true
+        type: Sequelize.STRING
       },
-
       dateFound: {
-        type: Sequelize.DATEONLY,
-        allowNull: false
+        type: Sequelize.DATEONLY
       },
-
       notes: {
-        type: Sequelize.STRING,
-        allowNull: true
+        type: Sequelize.STRING
       },
-
       picOne: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING
       },
-
       picTwo: {
-        type: Sequelize.STRING,
-        allowNull: true
+        type: Sequelize.STRING
       },
-
       picThree: {
-        type: Sequelize.STRING,
-        allowNull: true
+        type: Sequelize.STRING
       },
-
       picFour: {
-        type: Sequelize.STRING,
-        allowNull: true
+        type: Sequelize.STRING
       },
-
       picFive: {
-        type: Sequelize.STRING,
-        allowNull: true
+        type: Sequelize.STRING
       },
-
       mapsLink: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING
       },
-
       abundanceRating: {
-        type: Sequelize.INTEGER,
-        allowNull: false
+        type: Sequelize.INTEGER
       },
-
       locationDesc: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING
       },
-
       landmarks: {
-        type: Sequelize.STRING,
-        allowNull: true
+        type: Sequelize.STRING
       },
-
       userId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        field: 'userId',
         onDelete: 'CASCADE',
         references: {
           model: 'users',
           key: 'id'
         }
       },
-
       parkId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        field: 'parkId',
         onDelete: 'CASCADE',
         references: {
           model: 'parks',
           key: 'id'
         }
       },
-
       createdAt: {
-        field: 'created_at',
         allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: new Date()
+        type: Sequelize.DATE
       },
-      
       updatedAt: {
-        field: 'updated_at',
         allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: new Date()
+        type: Sequelize.DATE
       }
     });
   },
@@ -129,8 +87,3 @@ module.exports = {
     await queryInterface.dropTable('finds');
   }
 };
-
-
-//  SETUP    //////////////////////////////////////////////////////////////////////////////////////////////
-//  CODE     //////////////////////////////////////////////////////////////////////////////////////////////
-//  SWEEP  

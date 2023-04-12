@@ -9,39 +9,25 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-
       name: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING
       },
-
       password: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING
       },
-
       currentLocation: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING
       },
-
       profPic: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING
       },
-
       createdAt: {
-        field: 'created_at',
         allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: new Date()
+        type: Sequelize.DATE
       },
-
       updatedAt: {
-        field: 'updated_at',
         allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: new Date()
+        type: Sequelize.DATE
       }
     });
   },
@@ -49,8 +35,3 @@ module.exports = {
     await queryInterface.dropTable('users');
   }
 };
-
-
-//  SETUP    //////////////////////////////////////////////////////////////////////////////////////////////
-//  CODE     //////////////////////////////////////////////////////////////////////////////////////////////
-//  SWEEP    
