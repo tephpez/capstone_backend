@@ -1,4 +1,4 @@
-const { Park } = require("../models");
+const { Park } = require("../models/park");
 
 const GetPark = async (req, res) => {
   try {
@@ -50,7 +50,7 @@ const DeletePark = async (req, res) => {
 module.exports = {
   GetPark,
   CreatePark,
-  UpdateUser,
+  UpdatePark,
   DeletePark,
 };
 

@@ -4,10 +4,12 @@ const express = require('express')
 const cors = require('cors');
 const logger = require('morgan');
 const bodyParser  = require('body-parser');
+
+// PORT
 const PORT = process.env.PORT || 3001
 
-//CONTROLLERS
-const userController = require('./controllers/UserController.js')
+//ROUTES
+const AppRouter = require('./routes/AppRouter')
 
 const app = express()
 
@@ -17,17 +19,16 @@ app.use(express.json());
 app.use(express.urlencoded ({ extended:false }));
 app.use(bodyParser.json());
 
+// ESTABLISHING CONNECTION
+app.listen(PORT, ()=> { console.log(`${PORT} RUNNING SMOOTHLY`)})
 
-app.listen(PORT, ()=> {
-    console.log(`${PORT} RUNNING SMOOTHLY`)
-})
+// MAKING THE LANDING PAGE
+app.get('/', (req, res)=> {res.send('SERVER INITIATED')}) 
+
+// LOADING ROUTES
+app.use("/api", AppRouter);
 
 
-app.get('/', (req, res)=> {                 // MAKING THE LANDING PAGE
-    res.send('SERVER INITIATED')
-}) 
-
-app.get('/users', userController.GetUser)
 
 
 

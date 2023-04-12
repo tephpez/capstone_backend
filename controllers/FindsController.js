@@ -1,4 +1,4 @@
-const { Find } = require("../models");
+const { Find } = require("../models/find");
 
 const GetAllFinds = async (req, res) => {
     try {
