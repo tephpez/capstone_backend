@@ -1,14 +1,13 @@
 const { User } = require('../models/user');
 
 const GetUser = async (req, res) => {
-  try {
-    const users = await User.findAll();
-    res.send(users);
+  try{
+    const selectUser = await User.findByPk(req.params.user_id)
+    res.send(selectUser)
   } catch (error) {
     throw error;
   }
 };
-
 
 const CreateUser = async (req, res) => {
   try {
@@ -53,3 +52,8 @@ module.exports = {
   UpdateUser,
   DeleteUser,
 };
+
+
+//  SETUP    //////////////////////////////////////////////////////////////////////////////////////////////
+//  CODE     //////////////////////////////////////////////////////////////////////////////////////////////
+//  SWEEP    

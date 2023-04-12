@@ -9,28 +9,44 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+      allowNull: false
       },
+      
       mapUrl: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
+      
       hours: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
+      
       state: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
+      
       address: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
+      
       createdAt: {
+        field: 'created_at',
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date()
       },
+      
       updatedAt: {
+        field: 'updated_at',
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date()
       }
     });
   },
@@ -38,3 +54,8 @@ module.exports = {
     await queryInterface.dropTable('parks');
   }
 };
+
+
+//  SETUP    //////////////////////////////////////////////////////////////////////////////////////////////
+//  CODE     //////////////////////////////////////////////////////////////////////////////////////////////
+//  SWEEP    

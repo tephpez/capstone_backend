@@ -10,19 +10,44 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      User.hasMany(models.Find, { foreignKey: 'userId' })
+      User.hasMany(models.Find, { 
+        foreignKey: 'userId' ,
+        as: 'finds',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+      })
     }
   }
-  User.init({
-    name: DataTypes.STRING,
-    password: DataTypes.STRING,
-    currentLocation: DataTypes.STRING,
-    profPic: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'User',
-    tableName: 'users'
+  User.init(
+    {
+      name: {
+        type:DataTypes.STRING,
+        allowNull: false
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      currentLocation: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      profPic: {
+        type: DataTypes.STRING,
+        allowNull: false
+    }
+    }, {
+      sequelize,
+      modelName: 'User',
+      tableName: 'users'
 
-  });
+    });
   return User;
 };
+
+
+
+
+//  SETUP    //////////////////////////////////////////////////////////////////////////////////////////////
+//  CODE     //////////////////////////////////////////////////////////////////////////////////////////////
+//  SWEEP    

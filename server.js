@@ -47,9 +47,9 @@ app.use("/api", AppRouter);
 
 
 
-// app.get('/users', (req, res)=> {                 // USERS
-//     res.send('USERS INITIATED')
-// }) 
+app.get('/users', (req, res)=> {                 // USERS
+    res.send('USERS INITIATED')
+}) 
 
 // app.get('/parks', (req, res)=> {                 // PARKS
 //     res.send('PARKS INITIATED')

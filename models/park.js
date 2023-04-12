@@ -10,16 +10,38 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Park.hasMany(models.Find, { foreignKey: 'parkId' })
+      Park.hasMany(models.Find, { 
+        foreignKey: 'parkId' ,
+        as: 'finds',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+      })
     }
   }
-  Park.init({
-    name: DataTypes.STRING,
-    mapUrl: DataTypes.STRING,
-    hours: DataTypes.STRING,
-    state: DataTypes.STRING,
-    address: DataTypes.STRING
-  }, {
+  Park.init(
+    {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    mapUrl: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    hours: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    state:  {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    address:  {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
+  }, 
+  {
     sequelize,
     modelName: 'Park',
     tableName: 'parks'
@@ -27,3 +49,9 @@ module.exports = (sequelize, DataTypes) => {
   });
   return Park;
 };
+
+
+
+//  SETUP    //////////////////////////////////////////////////////////////////////////////////////////////
+//  CODE     //////////////////////////////////////////////////////////////////////////////////////////////
+//  SWEEP    
