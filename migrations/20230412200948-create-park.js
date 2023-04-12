@@ -51,14 +51,14 @@ module.exports = {
       },
 
       createdAt: {
-        field: 'created_at',
+        field: 'createdAt',
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: new Date()
       },
       
       updatedAt: {
-        field: 'updated_at',
+        field: 'updatedAt',
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: new Date()
