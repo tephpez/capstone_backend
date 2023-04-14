@@ -3,6 +3,7 @@ const controller = require('../controllers/FindsController.js')
 
 Router.get('/', controller.GetAllFinds);
 Router.get('/view/:findId', controller.GetFindDetails);
+// Router.get('/view/:category', controller.GetFindType);
 Router.post('/:userId', controller.CreateFind);
 Router.put('/:findId', controller.UpdateFind);
 Router.delete('/:findId', controller.DeleteFind);

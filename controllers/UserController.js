@@ -1,5 +1,6 @@
 const { User } = require('../models');
 
+// VIEW USER PROFILE
 const GetUser = async (req, res) => {
   try{
     console.log(User)
@@ -10,6 +11,7 @@ const GetUser = async (req, res) => {
   }
 };
 
+// CREATE NEW USER
 const CreateUser = async (req, res) => {
   try {
     let userProfile = {
@@ -22,6 +24,7 @@ const CreateUser = async (req, res) => {
   }
 };
 
+// UPDATE USER
 const UpdateUser = async (req, res) => {
   try {
     let userId = parseInt(req.params.userId);
@@ -35,6 +38,7 @@ const UpdateUser = async (req, res) => {
   }
 };
 
+// DELETE USER
 const DeleteUser = async (req, res) => {
   try {
     let userId = parseInt(req.params.userId);

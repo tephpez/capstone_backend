@@ -6,7 +6,7 @@ const logger = require('morgan');
 const bodyParser  = require('body-parser');
 
 // PORT
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3003
 
 //ROUTES
 const AppRouter = require('./routes/AppRouter')

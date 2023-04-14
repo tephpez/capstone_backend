@@ -1,8 +1,9 @@
-const { Find } = require("../models/find");
+const { Find } = require("../models");
 
 // VIEW ALL FINDS
 const GetAllFinds = async (req, res) => {
     try {
+      console.log(Find)
       const finds = await Find.findAll()
       res.send(finds)
     } catch (error) {
@@ -20,6 +21,12 @@ const GetFindDetails = async (req, res) => {
     }
   }
 
+// // VIEW FINDS BY TYPE
+// const GetFindType = async (rew,res_ => {
+//   try{
+
+//   }
+// })
 
 // CREATE
 const CreateFind = async (req, res) => {
@@ -41,7 +48,7 @@ const UpdateFind = async (req, res) => {
     try {
       let findId = parseInt(req.params.findId)
       let updatedFind = await Find.update(req.body, {
-        where : { id: findId},
+        where : { id: findId },
         returning: true
       })
       res.send(updatedFind)
