@@ -1,7 +1,8 @@
 const Router = require('express').Router()
 const controller = require('../controllers/ParkController.js')
 
-Router.get('/', controller.GetPark)
+Router.get('/', controller.GetAllParks)
+Router.get('/view/:parkId', controller.GetParkDetails);
 Router.post('/', controller.CreatePark)
 Router.put('/:parkId', controller.UpdatePark)
 Router.delete('/:parkId', controller.DeletePark)

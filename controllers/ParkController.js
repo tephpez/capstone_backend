@@ -1,14 +1,28 @@
-const { Park } = require("../models/park");
+const { Park } = require("../models");
 
-const GetPark = async (req, res) => {
+// VIEW ALL PARKS
+const GetAllParks = async (req, res) => {
+  try { 
+    console.log(Park)
+    const allParks = await Park.findAll()
+    res.send(allParks)
+    } catch (error) {
+      throw error
+    }
+  }
+
+  //VIEW INDIVIDUAL PARK
+const GetParkDetails = async (req, res) => {
   try {
-    const parks = await Park.findAll();
-    res.send(parks);
+    const parks = await Park.findByPk(req.params.parkId);
+    res.send(park);
   } catch (error) {
     throw error;
   }
 };
 
+
+//CREATE
 const CreatePark = async (req, res) => {
   try {
     let parkProfile = {
@@ -47,7 +61,8 @@ const DeletePark = async (req, res) => {
 };
 
 module.exports = {
-  GetPark,
+  GetAllParks,
+  GetParkDetails,
   CreatePark,
   UpdatePark,
   DeletePark,

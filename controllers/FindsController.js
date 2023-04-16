@@ -21,12 +21,6 @@ const GetFindDetails = async (req, res) => {
     }
   }
 
-// // VIEW FINDS BY TYPE
-// const GetFindType = async (rew,res_ => {
-//   try{
-
-//   }
-// })
 
 // CREATE
 const CreateFind = async (req, res) => {
