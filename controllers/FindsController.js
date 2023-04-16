@@ -4,8 +4,8 @@ const { Find } = require("../models");
 const GetAllFinds = async (req, res) => {
     try {
       console.log(Find)
-      const finds = await Find.findAll()
-      res.send(finds)
+      const allFinds = await Find.findAll()
+      res.send(allFinds)
     } catch (error) {
       throw error
     }
@@ -32,11 +32,11 @@ const GetFindDetails = async (req, res) => {
 const CreateFind = async (req, res) => {
     try {
       let userId = parseInt(req.params.userId)
-      let findContent = {
+      let findsContent = {
         userId,
         ...req.body
       }
-      let find = await Find.create(findContent)
+      let find = await Find.create(findsContent)
       res.send(find)
     } catch (error) {
       throw error
